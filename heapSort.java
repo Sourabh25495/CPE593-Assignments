@@ -1,3 +1,9 @@
+/*
+author: sourabh kulkarni
+cite: Some help taken from aakanksha gokhe
+*/
+
+
 import java.util.*;
 	
 import java.io.IOException;
@@ -51,7 +57,7 @@ x++;
 public static int heapSort(int [] nums, int k)
 	{
 		if(nums == null || nums.length == 0 || k < 1 || k > nums.length)
-			throw new IllegalArgumentException("Input is invalid");
+			throw new IllegalArgumentException("Invalid input");
 
 		buildHeap(nums);
 
@@ -59,7 +65,10 @@ public static int heapSort(int [] nums, int k)
 
 		for(int i = 1;i < k;i++)
 		{
-			swap(nums,0,size - 1);
+			
+			int t = nums[0];
+			nums[0] = nums[size-1];
+			nums[size-1] = t;
 			size--;
 			maxHeap(nums,0,size);
 		}
@@ -86,25 +95,20 @@ private static void buildHeap(int [] nums)
 
 		if(largest != parent)
 		{
-			swap(nums,largest,parent);
+			
+			int t = nums[largest];
+			nums[largest] = nums[parent];
+			nums[parent] = t;
 			maxHeap(nums,largest,size);
 		}
 	}
 
-	private static void swap(int [] nums, int i, int j)
-	{
-		int t = nums[i];
-		nums[i] = nums[j];
-		nums[j] = t;
-	}
 
 	public static void print(int[] x) {
-		for (int i = 0; i < x.length; ++i)
+		for (int i = 0; i < x.length; ++i){
 			System.out.print(x[i] + " ");
+		}
 		System.out.println();
 	}
-
-
-
 
 }

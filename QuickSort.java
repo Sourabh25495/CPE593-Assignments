@@ -1,9 +1,16 @@
+/*
+Author: Sourabh kulkarni
+*/
+
+
+
 import java.util.*;
 	
 import java.io.IOException;
-import java.util.ArrayList;
-	
+import java.util.ArrayList;	
 import java.io.*;
+
+
 
 class QuickSort{
 
@@ -20,7 +27,8 @@ public static void main(String[] args)throws FileNotFoundException {
 
     	 
 		while(scan.hasNextLine()){
-					if(x<a){
+					
+			if(x<a){
         	  int a1=Integer.parseInt(scan.nextLine()); 
 			  String b[]=scan.nextLine().split(" ");
 			  int[] nums = new int[b.length];
@@ -28,13 +36,13 @@ public static void main(String[] args)throws FileNotFoundException {
 			  for( i=0;i<nums.length;i++)
 			  		nums[i] = Integer.parseInt(b[i]);
 
-				int L=0;
-				int R=nums.length-1;
+			   int L=0;
+			   int R=nums.length-1;
 				 
-				 Quick(nums, L, R);
+			    Quick(nums, L, R);
 
 			  for( i=0;i<nums.length;i++){
-			System.out.print(nums[i]+" ");
+					System.out.print(nums[i]+" ");
 		}
 		System.out.println(" ");
     
@@ -53,7 +61,7 @@ x++;
 
 
 
-public static void Quick(int a[], int L, int R){
+	public static  void Quick(int a[], int L, int R){
 		if(a.length==0 || a==null)
 			return;
 		
@@ -65,7 +73,6 @@ public static void Quick(int a[], int L, int R){
 			while (a[i] < pivot) {
 				i++;
 			}
- 
 			while (a[j] > pivot) {
 				j--;
 			}
@@ -78,15 +85,14 @@ public static void Quick(int a[], int L, int R){
 				j--;
 			}
 		}
-		
+ 
 		if(L<j)
-			Quick(a, L, j);
-		if(i<R)
+			Quick(a, L, i-1);
+	    if(i<R)
 			Quick(a, i, R);
-
-		
 				
 		
+	
 	}
     
 
