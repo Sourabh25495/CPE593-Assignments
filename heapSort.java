@@ -16,7 +16,7 @@ class heapSort{
 
 public static void main(String[] args)throws FileNotFoundException {
 
-    Scanner scan = new Scanner(new File("hw2a.dat"));
+    Scanner scan = new Scanner(new File("hw2b.dat"));
 			int i=0;
 			String line = scan.nextLine();
 			int a=Integer.parseInt(line);
