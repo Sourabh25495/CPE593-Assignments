@@ -10,16 +10,16 @@ class countPrime{
 
 
 public static void main(String[] args)throws FileNotFoundException {
-    Scanner sc=new Scanner(System.in);
+    Scanner sc = new Scanner(System.in);
     System.out.println("Enter lower limit");
-    int a=sc.nextInt();
+    long a = sc.nextLong();
     System.out.println("Enter Ypper limit");
-    int b=sc.nextInt();
+    long b = sc.nextLong();
     
-    int count=0;
+    long count = 0;
     
     ;
-    int x=countPrimes(a,b, count);
+    long x = countPrimes(a,b, count);
     System.out.println(x);
 }
 	
@@ -29,30 +29,27 @@ public static void main(String[] args)throws FileNotFoundException {
 
 
 
-public static int countPrimes(int a, int b, int count) {
+public static long countPrimes(long a, long b, long count) {
 
-
-    
-    
-
-   boolean[] primes = new boolean[b+1];
+/*
+   boolean[] primes = new boolean[(int)b+1];
 	for (int i = 2; i < b; i++)
-		primes[i] = true;
+		primes[(int)i] = true;
  
-	for (int i = 2; i <=(b - 1); i++) {
+	for (long i = 2; i <=(b - 1); i++) {
 
-		if (primes[i]) {
-			for (int j = i+i ; j < b; j +=i){
-				primes[j] = false;
+		if (primes[(int)i]) {
+			for (long j = i+i ; j < b; j +=i){
+				primes[(int)j] = false;
                 //System.out.println(j);
             }
 		}
 	}
  
 	//count = 0;
-	for (int i = a; i <=b; i++) {
+	for (long i = a; i <= b; i++) {
          //System.out.println(i);
-		if (primes[i])
+		if (primes[(int)i])
         {
            
 			count++;
@@ -61,6 +58,42 @@ public static int countPrimes(int a, int b, int count) {
 	}
    
 	return count;
+    */
+
+
+
+    //this works for numbers > 10^9
+    long sqrtB = (long)Math.sqrt(b);
+			long nop = b - a + 1;//The number of primes among the range
+			BitSet seive = new BitSet((int)sqrtB + 1);
+			BitSet range = new BitSet((int)nop + 1);
+			for(int i = 2;i <= sqrtB;i++)
+			{
+					if(!seive.get(i))
+					{
+						for(int k = i;k <= sqrtB;k += i)
+						{
+							seive.set(k);
+						}
+						long ratio = a / i;
+						for(long j = ratio * i;j <= b;j += i)
+						{
+							if(j >= a)
+							{
+								if(j == i)
+									continue;
+								int index = (int)(j - a);
+								if(!range.get(index))
+								{
+									range.set(index);
+									nop--;
+								}
+							}
+						}
+					}
+			}
+            
+			return nop;
     
 
 }
