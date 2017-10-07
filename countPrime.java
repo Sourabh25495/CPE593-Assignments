@@ -59,10 +59,6 @@ public static long countPrimes(long a, long b, long count) {
    
 	return count;
     */
-
-
-
-    //this works for numbers > 10^9
     long sqrtB = (long)Math.sqrt(b);
 			long nop = b - a + 1;//The number of primes among the range
 			BitSet seive = new BitSet((int)sqrtB + 1);
@@ -93,6 +89,7 @@ public static long countPrimes(long a, long b, long count) {
 					}
 			}
             
+			
 			return nop;
     
 
