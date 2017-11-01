@@ -17,14 +17,30 @@ public DlinkedList(){
     tail = null;
 
 }
-
+  // adds a node at the start
 public void addStart(){
+    Node temp = new Node(v, head, null);
+    if(head != null){   // checks if head is present
+        head.prev = temp;
 
+    }
+
+    if(tail == null){  // checks if tail is null
+        tail = temp;
+    }
 
 }
 
+// adds node at the end
 public void addEnd(){
+    Node temp = new Node(v, head, null);
+    if( head == null){
+        head = temp;
+    }
 
+    if(tail != null){
+        tail.next = temp;
+    }
 
 }
 
@@ -35,7 +51,7 @@ public void removeStart(){
 
 public void removeEnd(){
 
-    
+
 }
 
 
