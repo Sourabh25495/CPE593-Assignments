@@ -10,7 +10,7 @@ import java.io.*;
 
 
 
-class countPrime{
+class Primes{
 
 
 public static void main(String[] args)throws FileNotFoundException {
@@ -19,11 +19,14 @@ public static void main(String[] args)throws FileNotFoundException {
     long a = sc.nextLong();
     System.out.println("Enter upper limit");
     long b = sc.nextLong();
+	long range = b-a;
+	int range1= (int) range;
+
 	
     
     long count = 0;
     
-    ;
+    
     long x = countPrimes(a,b, count);
     System.out.println(x);
 }
@@ -40,13 +43,13 @@ public static long countPrimes(long a, long b, long count) {
 
 /*
    boolean[] primes = new boolean[(int)b+1];
-	for (int i = 2; i < b; i++)
+	for (int i = 0; i < range; i++)
 		primes[(int)i] = true;
  
-	for (long i = 2; i <=(b - 1); i++) {
+	for (long i = a; i <=(b ); i++) {
 
 		if (primes[(int)i]) {
-			for (long j = i+i ; j < b; j +=i){
+			for (long j = i*2 ; j <= range; j +=i){
 				primes[(int)j] = false;
                 //System.out.println(j);
             }
@@ -58,14 +61,15 @@ public static long countPrimes(long a, long b, long count) {
          //System.out.println(i);
 		if (primes[(int)i])
         {
-           
+           System.out.println(i);
 			count++;
         }
           
 	}
    
 	return count;
-    */
+	*/
+    
 
 	// works till 10^14
     long sqrtB = (long)Math.sqrt(b);
@@ -100,6 +104,7 @@ public static long countPrimes(long a, long b, long count) {
             
 			
 			return n;
+			
     
 
 }

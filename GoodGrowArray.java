@@ -19,8 +19,6 @@ class GoodGrowArray{
 	}
 
     
-
-
     public void grow(){  // grow the array
         int s = size*2;
         int[] temp = new int[s];
@@ -34,7 +32,7 @@ class GoodGrowArray{
     }
 
 
-
+/*
 
     GoodGrowArray(int capacity) {  //Set capacity
 		p = new int[capacity];
@@ -42,11 +40,13 @@ class GoodGrowArray{
 		size = capacity;
 	}
 
+    */
+
     public void output() { // O(n)
  		System.out.println();
  		for(int i=0;i<used;i++)
- 			System.out.print(p[i]+ " ");
-            System.out.println(" ");
+ 			System.out.print(p[i]+ ",");
+            
          System.out.println(" ");
  	}
      
@@ -83,12 +83,9 @@ class GoodGrowArray{
         for(int i=p.length-1; i > 0; i--){
             p[i]=p[i-1];
         }
-
         p[0]=v;
         used++;
         size=used;
-
-
     }
     
 
