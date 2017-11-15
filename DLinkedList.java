@@ -112,7 +112,7 @@ public int size(){
 // Main function reads the input file
 // Converts all strings to respective data types
 public static void main(String[] args) throws Exception{
-        Scanner sc = new Scanner(new FileReader("HW4a.txt"));
+        Scanner sc = new Scanner(new FileReader("HW4b.txt"));
         
         DLinkedList a = new DLinkedList();
 
