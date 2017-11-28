@@ -166,7 +166,7 @@ class HashLC {
 
             //final String wordToBeSearched = "aa";
 
-            Scanner sc1 = new Scanner( new FileReader("hw8.txt"));
+            Scanner sc1 = new Scanner( new FileReader("hw8.dat"));
 
             while(sc1.hasNext()){
                 String s1 = sc1.next();
