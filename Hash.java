@@ -137,7 +137,7 @@ public class Hash {
  		      System.out.println(e);             
  		      System.exit(1);                    
  		  }	
-    Scanner sc1 = new Scanner( new FileReader("hw8.txt"));
+      Scanner sc1 = new Scanner( new FileReader("hw8.txt"));
  	int b =0;
  	while(sc1.hasNext()){
  		String s1 = sc1.next();
